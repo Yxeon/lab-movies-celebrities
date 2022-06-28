@@ -1,0 +1,10 @@
+<h2>Movie List</h2>
+<div>
+{{#each response}}
+<h3><a href="/movies/{{id}}">{{title}}</a></h3>
+<p>Genre: {{genre}}</p>
+<p>Plot {{plot}}</p>
+<p>Cast {{cast}}</p>
+
+{{/each}}
+</div>
