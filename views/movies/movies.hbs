@@ -5,6 +5,8 @@
 <p>Genre: {{genre}}</p>
 <p>Plot {{plot}}</p>
 <p>Cast {{cast}}</p>
-
+<form action="/movies/{{id}}/delete" method="POST">
+    <button>Delete</button>
+</form>
 {{/each}}
 </div>

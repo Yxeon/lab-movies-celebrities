@@ -50,5 +50,12 @@ router.get('/movies/create', (req, res, next) => {
         next(error);
     })
   })
+
+  router.post("/movies/:id/delete", (req, res, next) => {
+    const { id } = req.params;
+    Movie.findByIdAndDelete(id)
+    .then(() => res.redirect("/movies"))
+    .catch(error => next(error));
+  });
 // all your routes here
 module.exports = router;
