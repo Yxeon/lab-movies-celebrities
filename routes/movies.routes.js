@@ -57,5 +57,20 @@ router.get('/movies/create', (req, res, next) => {
     .then(() => res.redirect("/movies"))
     .catch(error => next(error));
   });
+
+  // Edit
+  router.post('/movies/:id/edit', (req, res, next) => {
+    // Iteration #4: Update the drone
+    const {genre, plot, cast} = req.body
+    Movie.findByIdAndUpdate(req.params.id, {genre, plot, cast})
+    .then(() => {
+      res.redirect("/movies")
+    })
+    .catch((e) => {
+      console.log(e)
+      res.redirect("movies/edit-movie.hbs")
+    })
+    // ... your code here
+  });
 // all your routes here
 module.exports = router;
